@@ -28,5 +28,6 @@ module.exports = {
         "import/prefer-default-export": "off",
         "import/no-extraneous-dependencies": ["error", {devDependencies: true}],
         "jsx-a11y/label-has-associated-control": "off",
+        "react/jsx-no-bind": "off",
     },
 };
