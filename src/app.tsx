@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { GuessForm } from "./components/guess-form";
 import { Guess } from "./types";
+import { Guesses } from "./components/guesses";
 
 export function App() {
   const [guesses, setGuesses] = useState<Guess[]>([]);
@@ -10,12 +11,8 @@ export function App() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen max-w-56 mx-auto py-10">
-      <ul className="flex-1">
-        {guesses.map(({ guess }) => (
-          <li key={guess}>{guess}</li>
-        ))}
-      </ul>
+    <div className="flex flex-col min-h-screen max-w-xl mx-auto py-10">
+      <Guesses guesses={guesses} />
       <GuessForm onGuess={handleGuess} />
     </div>
   );
