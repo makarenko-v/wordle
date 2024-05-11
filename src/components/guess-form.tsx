@@ -1,22 +1,21 @@
 import React, { useState } from "react";
-import { Guess } from "../types";
 
 interface GuessFormProps {
-  onGuess: (guess: Guess) => void;
+  onGuess: (guess: string) => void;
 }
 
 export function GuessForm({ onGuess }: GuessFormProps) {
-  const [input, setInput] = useState<Guess>({ guess: "" });
+  const [guess, setGuess] = useState("");
 
   function handleInput(e: React.ChangeEvent<HTMLInputElement>) {
-    setInput({ guess: e.target.value.toUpperCase() });
+    setGuess(e.target.value.toUpperCase());
   }
 
   function handleGuess(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    onGuess(input);
-    setInput({ guess: "" });
+    onGuess(guess);
+    setGuess("");
   }
 
   return (
@@ -28,7 +27,7 @@ export function GuessForm({ onGuess }: GuessFormProps) {
         className="w-full border-2 border-slate-500 p-2 rounded-md text-xl focus:ring-2 focus:ring-black focus:ring-offset-1 focus-visible:outline-none"
         id="guess"
         type="text"
-        value={input.guess}
+        value={guess}
         onChange={handleInput}
         pattern="\w{5,5}"
       />
