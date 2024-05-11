@@ -1,3 +1,5 @@
+import { GuessForm } from "./components/guess-form";
+
 export function App() {
-  return <div>Hello, World!</div>;
+  return <GuessForm />;
 }
