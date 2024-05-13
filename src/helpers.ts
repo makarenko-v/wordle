@@ -1,4 +1,5 @@
-import { Letter } from "./types";
+import { Letter, Word } from "./types";
+import { NUM_OF_GUESSES_ALLOWED } from "./constants.ts";
 
 function getLetterIndexMap(word: string): Record<string, number> {
   return word
@@ -22,4 +23,10 @@ export function checkGuess(guess: string, answer: string): Letter[] {
 
     return { letter, status: "correct" };
   });
+}
+
+export function initGuesses(): Word[] {
+  return Array.from({ length: NUM_OF_GUESSES_ALLOWED }, () =>
+    Array.from({ length: 5 }, (): Letter => ({ letter: "", status: "empty" })),
+  );
 }

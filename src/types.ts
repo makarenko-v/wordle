@@ -6,3 +6,13 @@ export interface Letter {
 }
 
 export type Word = Letter[];
+
+export const Game = {
+  WON: "WON",
+  LOST: "LOST",
+  RUNNING: "RUNNING",
+} as const;
+
+export type GameStatus = (typeof Game)[keyof typeof Game];
+
+export type ResultStatus = Exclude<GameStatus, "RUNNING">;

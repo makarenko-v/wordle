@@ -5,7 +5,7 @@ interface GuessesProps {
 }
 
 const styles: Record<Status, string> = {
-  empty: "",
+  empty: "border-slate-500",
   misplaced: "bg-orange-500 border-orange-500",
   correct: "bg-emerald-800 border-emerald-800",
   incorrect: "bg-neutral-800 border-neutral-800",
@@ -18,7 +18,7 @@ export function Guesses({ guesses }: GuessesProps) {
         <div className="flex justify-between">
           {guess.map(({ letter, status }) => (
             <span
-              className={`h-20 w-20 border-2 border-slate-500 flex items-center justify-center font-bold text-3xl text-white ${styles[status]}`}
+              className={`h-20 w-20 border-2 flex items-center justify-center font-bold text-3xl text-white ${styles[status]}`}
             >
               {letter}
             </span>
