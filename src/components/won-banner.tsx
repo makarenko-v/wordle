@@ -1,5 +1,5 @@
 import { Banner } from "./banner";
-import { Game } from "../types";
+import { Status } from "../shared/lib/game-status";
 
 interface WonBannerProps {
   tookGuesses: number;
@@ -7,7 +7,7 @@ interface WonBannerProps {
 
 export function WonBanner({ tookGuesses }: WonBannerProps) {
   return (
-    <Banner status={Game.WON}>
+    <Banner status={Status.WON}>
       <p>
         <strong>Congratulations!</strong> Got it in{" "}
         <strong>

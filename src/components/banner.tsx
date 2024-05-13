@@ -1,13 +1,13 @@
 import React from "react";
-import { Game, ResultStatus } from "../types";
+import { Status, ResultStatus } from "../shared/lib/game-status";
 
 interface BannerProps {
   status: ResultStatus;
 }
 
 const styles: Record<ResultStatus, string> = {
-  [Game.WON]: "bg-emerald-800",
-  [Game.LOST]: "bg-red-600",
+  [Status.WON]: "bg-emerald-800",
+  [Status.LOST]: "bg-red-600",
 };
 
 export function Banner({

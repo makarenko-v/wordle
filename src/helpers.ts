@@ -1,11 +1,6 @@
 import { Letter, Word } from "./types";
-import { NUM_OF_GUESSES_ALLOWED } from "./constants.ts";
-
-function getLetterIndexMap(word: string): Record<string, number> {
-  return word
-    .split("")
-    .reduce((acc, letter, index) => ({ ...acc, [letter]: index }), {});
-}
+import { NUM_OF_GUESSES_ALLOWED } from "./shared/config/constants";
+import { getLetterIndexMap } from "./shared/lib/utils";
 
 export function checkGuess(guess: string, answer: string): Letter[] {
   const answerMap = getLetterIndexMap(answer);
