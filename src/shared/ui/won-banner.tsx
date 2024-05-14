@@ -1,5 +1,5 @@
 import { Banner } from "./banner";
-import { Status } from "../shared/lib/game-status";
+import { Status } from "../lib/game-status";
 
 interface WonBannerProps {
   tookGuesses: number;

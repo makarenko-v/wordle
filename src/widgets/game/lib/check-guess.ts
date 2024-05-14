@@ -1,6 +1,5 @@
-import { Letter, Word } from "./types";
-import { NUM_OF_GUESSES_ALLOWED } from "./shared/config/constants";
-import { getLetterIndexMap } from "./shared/lib/utils";
+import { Letter } from "@/entities/guess/model/types";
+import { getLetterIndexMap } from "@/shared/lib/utils";
 
 export function checkGuess(guess: string, answer: string): Letter[] {
   const answerMap = getLetterIndexMap(answer);
@@ -18,10 +17,4 @@ export function checkGuess(guess: string, answer: string): Letter[] {
 
     return { letter, status: "correct" };
   });
-}
-
-export function initGuesses(): Word[] {
-  return Array.from({ length: NUM_OF_GUESSES_ALLOWED }, () =>
-    Array.from({ length: 5 }, (): Letter => ({ letter: "", status: "empty" })),
-  );
 }

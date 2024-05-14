@@ -1,5 +1,5 @@
 import React from "react";
-import { Status, ResultStatus } from "../shared/lib/game-status";
+import { Status, ResultStatus } from "../lib/game-status";
 
 interface BannerProps {
   status: ResultStatus;

@@ -1,5 +1,5 @@
+import { Status } from "../lib/game-status";
 import { Banner } from "./banner";
-import { Status } from "../shared/lib/game-status";
 
 interface LostBannerProps {
   answer: string;
