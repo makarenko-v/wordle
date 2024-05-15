@@ -16,7 +16,7 @@ export function Banner({
 }: React.PropsWithChildren<BannerProps>) {
   return (
     <div
-      className={`absolute bottom-0 rounded-t-md w-full p-6 text-center text-white text-lg animate-slideUp ${styles[status]}`}
+      className={`absolute bottom-0 rounded-t-md w-full p-4 sm:p-6 text-center text-white sm:text-lg animate-slideUp ${styles[status]}`}
     >
       {children}
     </div>

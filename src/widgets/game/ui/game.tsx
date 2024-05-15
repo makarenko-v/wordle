@@ -46,18 +46,21 @@ export function Game() {
   }
 
   return (
-    <div className="flex flex-col flex-1 mt-10 max-w-md w-full mx-auto relative">
-      {answer}
-      <Guesses guesses={guesses} />
-      {gameOver ? (
-        <div className="flex-1">
-          <Button onClick={handleReset}>Reset</Button>
+    <>
+      <div className="flex flex-col mt-4 max-w-sm sm:max-w-md w-full mx-auto relative">
+        {answer}
+        <Guesses guesses={guesses} />
+        <div className="mt-6 sm:mt-10 sm:w-full w-80 mx-auto">
+          {gameOver ? (
+            <Button onClick={handleReset}>Reset</Button>
+          ) : (
+            <GuessForm onGuess={handleGuess} />
+          )}
         </div>
-      ) : (
-        <GuessForm onGuess={handleGuess} />
-      )}
+      </div>
+
       {gameStatus === Status.LOST && <LostBanner answer={answer} />}
       {gameStatus === Status.WON && <WonBanner tookGuesses={currentIndex} />}
-    </div>
+    </>
   );
 }

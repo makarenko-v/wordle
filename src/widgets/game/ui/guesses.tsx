@@ -7,12 +7,10 @@ interface GuessesProps {
 
 export function Guesses({ guesses }: GuessesProps) {
   return (
-    <div className="flex flex-col text-xl flex-1">
-      <div className="flex flex-wrap gap-3">
-        {guesses.map((guess, index) => (
-          <Guess guess={guess} key={index} />
-        ))}
-      </div>
+    <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
+      {guesses.map((guess, index) => (
+        <Guess guess={guess} key={index} />
+      ))}
     </div>
   );
 }

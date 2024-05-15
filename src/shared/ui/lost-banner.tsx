@@ -1,3 +1,4 @@
+import { createPortal } from "react-dom";
 import { Status } from "../lib/game-status";
 import { Banner } from "./banner";
 
@@ -6,11 +7,12 @@ interface LostBannerProps {
 }
 
 export function LostBanner({ answer }: LostBannerProps) {
-  return (
+  return createPortal(
     <Banner status={Status.LOST}>
       <p>
         Sorry, the correct answer is <strong>{answer}</strong>
       </p>
-    </Banner>
+    </Banner>,
+    document.getElementById("banner")!,
   );
 }
